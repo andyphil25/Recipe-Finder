@@ -11,13 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161029133114) do
+ActiveRecord::Schema.define(version: 20161030204812) do
 
-  create_table "searches", force: :cascade do |t|
-    t.string   "term"
-    t.integer  "view",       limit: 8
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+  create_table "recipes", force: :cascade do |t|
+    t.string   "recipeId"
+    t.string   "title"
+    t.string   "source_url"
+    t.string   "image_url"
+    t.text     "ingredients"
+    t.integer  "view",        limit: 8, default: 0
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
 end
