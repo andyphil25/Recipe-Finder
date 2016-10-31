@@ -1,14 +1,9 @@
-<%= form_tag recipes_index_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
 
-<h1>Searching for - <%= @search_term %></h1>
 
-<% if  @recipes %>
-  
+
+<% if @recipes %>
+
+  <h1>Searching for - <%= @search_term %></h1>
 
   <table border="1">
     <tr>
@@ -18,8 +13,10 @@
     </tr>
     <% @recipes.each do |recipe| %>
       <tr class=<%= cycle('even', 'odd') %>>
-        <td><%= link_to image_tag(recipe["image_url"],  height: '100', width: '100') , recipe["source_url"]  %></td>
-        <td><%= link_to sanitize(recipe["title"]) , recipe["source_url"] %></td>
+        <td><%= link_to image_tag(recipe["image_url"],  height: '100', width: '100') , 
+          recipe["source_url"]  %></td>
+        <td><%= link_to sanitize(recipe["title"]) , 
+          recipe_path(:id => recipe.id, :search => @search_term) %></td>
         <td><%= recipe["social_rank"] %></td>
       </tr>
     <% end %>

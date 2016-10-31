@@ -1,5 +1,7 @@
 class RecipesController < ApplicationController
-  
+
+  before_action :set_recipe, only: [:show]
+
   def index
   	if params[:search]
   		@search_term = params[:search] 
@@ -29,7 +31,15 @@ class RecipesController < ApplicationController
 
   end
 
-  def new
-  	@recipe = Recipe.new
+  def show
+  	puts params[:search]
   end
+
+  private
+
+  	def set_recipe
+  		@recipe  = Recipe.find(params[:id])
+
+  	end
+
 end
