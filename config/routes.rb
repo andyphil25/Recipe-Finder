@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   root 'recipes#index'
   resources :recipes, only: [:index, :show]
-  #get 'recipes' => 'recipes#index'
   #get 'recipes/:id' => 'recipes#show', as: 'recipe'
   
   # The priority is based upon order of creation: first created -> highest priority.

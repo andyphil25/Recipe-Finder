@@ -4,7 +4,4 @@
   <%= @recipe.title %>
 </p>
 
-<p>
-  <strong>Search:</strong>
-  <%= params[:search] %>
-</p>
+<%= link_to "Back", recipes_path(:search => params[:search]) %>

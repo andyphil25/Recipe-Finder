@@ -1,11 +1,18 @@
 class RecipesController < ApplicationController
 
   before_action :set_recipe, only: [:show]
+  before_action :sample_recipes, only: [:index, :show]
 
   def index
-  	if params[:search]
-  		@search_term = params[:search] 
-	  	search_records = Recipe.search @search_term
+  	
+  	if params[:search] and not params[:search].empty? and not params[:search].blank?
+  		if params[:search].match('[0-9;\.]')
+  			flash[:error] = "INVALID search input"
+  			return
+  		end
+  		
+  		@search_term = params[:search].strip
+  		search_records = Recipe.search @search_term
 	    
 	    if search_records.empty?
 	    	new_recipes = Recipe.for(@search_term)
@@ -27,19 +34,18 @@ class RecipesController < ApplicationController
   	else
   		puts "no search"
   	end
-  	
-
   end
 
   def show
-  	puts params[:search]
   end
 
   private
 
   	def set_recipe
   		@recipe  = Recipe.find(params[:id])
-
   	end
-
+		
+		def sample_recipes
+	  	@samples = Recipe.take 5
+	  end
 end
