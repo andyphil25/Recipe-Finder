@@ -1,0 +1,23 @@
+
+
+<h2>Sample</h2>
+<% if @samples %>
+
+  <table border="1">
+    <tr>
+    	<th>Image</th>
+    	<th>Title</th>
+    	<th>Social Rank</th>
+    </tr>
+    <% @samples.each do |recipe| %>
+      <tr class=<%= cycle('even', 'odd') %>>
+        <td><%= link_to image_tag(recipe["image_url"],  height: '100', width: '100') , 
+          recipe["source_url"]  %></td>
+        <td><%= link_to sanitize(recipe["title"]) , 
+          recipe_path(:id => recipe.id, :search => @search_term) %></td>
+        <td><%= recipe["social_rank"] %></td>
+      </tr>
+    <% end %>
+
+  </table>
+<% end %>
