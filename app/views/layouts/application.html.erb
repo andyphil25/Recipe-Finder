@@ -2,8 +2,9 @@
 <html>
 <head>
   <title>Recipefinder</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'bootstrap.min', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -24,6 +25,8 @@
 	<%= render "layouts/sample_recipes.html.erb" %>
 
 	<%= yield %>
-
+	
+	<%= javascript_include_tag 'jquery-2.1.4.min', 'bootstrap.min' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
