@@ -1,30 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Recipefinder</title>
   <%= stylesheet_link_tag 'bootstrap.min', media: 'all' %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  
+  <link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky" rel="stylesheet"> 
   <%= csrf_meta_tags %>
 </head>
 <body>
 	
-	<% flash.each do |key, value| %>
-	  <p id='<%= key %>'><%= value %></p>
-	<% end %>
+	<%= render "layouts/header", :layout => true %>
+	
+	<div class="container">
+		<div id="main-content" class="row">
+			
+			<div id="search-result" class="col-md-8">
+				<% flash.each do |key, value| %>
+				  <p id='<%= key %>'><%= value %></p>
+				<% end %>			
+				
+				<%= form_tag recipes_path, :method => 'get' do %>
+				  <p>
+				    <%= text_field_tag :search, params[:search], placeholder: 'Enter name or ingredient...' %>
+				    <%= submit_tag "Search", :name => nil %>
+				  </p>
+				<% end %>
+				
+				<%= yield %>
+
+			</div>
+			<aside class="col-md-4">
+				<%= render "layouts/sample_recipes", :layout => true %>
+			</aside>
+		</div>
+
+	</div>
+	
 
 	<p>Powered	By	Food2Fork.com</p>
 		
-	<%= form_tag recipes_path, :method => 'get' do %>
-	  <p>
-	    <%= text_field_tag :search, params[:search], placeholder: 'Enter name or ingredient...' %>
-	    <%= submit_tag "Search", :name => nil %>
-	  </p>
-	<% end %>
+	
 
-	<%= render "layouts/sample_recipes", :layout => true %>
+	
 
-	<%= yield %>
+	
 	
 	<%= javascript_include_tag 'jquery-2.1.4.min', 'bootstrap.min' %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
