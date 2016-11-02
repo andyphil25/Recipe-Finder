@@ -13,3 +13,26 @@ td {
 .even {
   background-color: #D6E1C3;
 }
+
+.recipe-tile {
+  position: relative;
+  border: 2px solid black;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px;
+  border-radius: 20px;
+}
+
+.recipe-tile span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  background-color: #000;
+  color: #fff;
+  opacity: .8;
+}

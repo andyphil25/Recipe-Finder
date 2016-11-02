@@ -20,7 +20,7 @@
 		<div id="main-content" class="row">
 			
 			<!-- Search result div -->
-			<div id="search-result" class="col-md-8">
+			<div id="search-result" class="col-md-8 col-sm-12">
 
 				<!-- Flash Notification -->
 				<% flash.each do |key, value| %>
@@ -41,13 +41,14 @@
 				  </div>
 				<% end %>
 				
-				<%= yield %>
+				<%= yield %>	
+				
 
 			</div>
 			<!-- END OF Search result div -->
 
 			<!-- Side Panel -->
-			<aside class="col-md-4">
+			<aside class="col-md-4 col-sm-12">
 				<%= render "layouts/sample_recipes", :layout => true %>
 			</aside>
 		</div>
