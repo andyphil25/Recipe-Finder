@@ -11,3 +11,4 @@ Rails.application.config.assets.version = '2.0'
 Rails.application.config.assets.precompile += %w( bootstrap.min.css )
 Rails.application.config.assets.precompile += %w( jquery-2.1.4.min.js )
 Rails.application.config.assets.precompile += %w( bootstrap.min.js )
+Rails.application.config.assets.precompile += %w( .svg .eot .woff .ttf )

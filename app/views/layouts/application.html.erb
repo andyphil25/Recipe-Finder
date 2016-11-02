@@ -12,26 +12,41 @@
 </head>
 <body>
 	
+	<!-- HEADER -->
 	<%= render "layouts/header", :layout => true %>
 	
+	<!-- MAIN CONTENT -->
 	<div class="container">
 		<div id="main-content" class="row">
 			
+			<!-- Search result div -->
 			<div id="search-result" class="col-md-8">
+
+				<!-- Flash Notification -->
 				<% flash.each do |key, value| %>
 				  <p id='<%= key %>'><%= value %></p>
 				<% end %>			
 				
+				<!-- Search Bar -->
 				<%= form_tag recipes_path, :method => 'get' do %>
-				  <p>
-				    <%= text_field_tag :search, params[:search], placeholder: 'Enter name or ingredient...' %>
-				    <%= submit_tag "Search", :name => nil %>
-				  </p>
+				  <div class="input-group">
+				    <%= text_field_tag :search, params[:search], class: "form-control", placeholder: 'Enter name or ingredient...' %>
+				    <span class="input-group-btn">
+				    	<%= button_tag "Search", :name => nil, class: "btn btn-default" do %>
+								<%= content_tag(:span, "", class: "glyphicon glyphicon-search" ) %>
+								<%= content_tag(:strong, 'Search') %>
+				    	<% end %>	
+				    </span>
+				    
+				  </div>
 				<% end %>
 				
 				<%= yield %>
 
 			</div>
+			<!-- END OF Search result div -->
+
+			<!-- Side Panel -->
 			<aside class="col-md-4">
 				<%= render "layouts/sample_recipes", :layout => true %>
 			</aside>
