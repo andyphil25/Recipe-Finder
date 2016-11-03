@@ -10,10 +10,10 @@
     <% @recipes.each do |recipe| %>
       
 
-      <div class="col-lg-4 col-xs-6 text-center">
+      <div class="col-sm-4 col-xs-6">
         <%= link_to recipe_path(:id => recipe.id, :search => @search_term) do %>
           <div class="recipe-tile">
-            <%= image_tag(recipe["image_url"],  height: '200', width: '200')  %>
+            <%= image_tag(recipe["image_url"],  height: '175', width: '175')  %>
             <span><%= sanitize(recipe["title"]) %></span>
           </div>
         <% end %>

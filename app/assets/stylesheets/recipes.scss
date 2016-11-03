@@ -18,8 +18,8 @@ td {
   position: relative;
   border: 2px solid black;
   overflow: hidden;
-  width: 200px;
-  height: 200px;
+  width: 175px;
+  height: 175px;
   margin: 0 auto 20px;
   border-radius: 20px;
 }
@@ -29,10 +29,11 @@ td {
   bottom: 0;
   right: 0;
   width: 100%;
+  min-height: 20%;
+  max-height: 35%;
   text-align: center;
   font-size: 1.2em;
-  text-transform: uppercase;
   background-color: #000;
   color: #fff;
-  opacity: .8;
+  opacity: .75;
 }
