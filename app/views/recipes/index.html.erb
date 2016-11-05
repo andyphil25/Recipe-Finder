@@ -3,7 +3,7 @@
 
 <% if @recipes %>
 
-  <h2>Searching for - <%= @search_term %></h2>
+  <h2>Recipes for - <%= @search_term %></h2>
 
   <div class="row">
         
@@ -21,4 +21,8 @@
     <% end %>
   </div>
 
+<% else %>
+  <div>
+    <%= image_tag( image_path('fika-l.jpg'), :id =>"fika" ) %>
+  </div>
 <% end %>

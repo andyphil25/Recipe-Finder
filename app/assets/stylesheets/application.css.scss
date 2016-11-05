@@ -54,6 +54,12 @@ form .input-group {
 	margin-top: 20px;
 }
 
+#fika {
+	width: 100%;
+	height: 450px;
+	margin: 20px auto 0;
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
 	.page-header {
@@ -69,6 +75,9 @@ form .input-group {
 	.recipe-tile img{
 		width: 125px;
   	height: 125px;
+	}
+	#fika {
+		height: 200px;
 	}
 }
 
@@ -91,5 +100,8 @@ form .input-group {
 	.recipe-tile img{
 		width: 125px;
   	height: 125px;
+	}
+	#fika {
+		height: 200px;
 	}
 }
