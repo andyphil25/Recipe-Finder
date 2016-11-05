@@ -7,11 +7,11 @@ table {
 }
 
 td {
-  padding: 12px;
+  padding: 10px;
 }
 
 .even {
-  background-color: #D6E1C3;
+  background-color: #e9f2a7;
 }
 .recipe-tile {
   position: relative;
@@ -35,4 +35,10 @@ td {
   background-color: #000;
   color: #fff;
   opacity: .75;
+}
+
+td img { // Image tagg on sidebar
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
 }
