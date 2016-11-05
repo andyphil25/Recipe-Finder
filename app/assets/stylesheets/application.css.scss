@@ -25,8 +25,8 @@
 }
 
 h1 {
-	font-family: 'Fontdiner Swanky', cursive;
-	font-size: 70px;
+	font-family: 'Qwigley', cursive;
+	font-size: 90px;
 }
 .page-header {
 	border-bottom: 0;
@@ -38,8 +38,9 @@ header {
 }
 
 #header-image {
-	width: 100%;
-	height: 150px;
+	width: 80%;
+	height: 100px;
+	margin: 0 auto 0;
 	background-image: image-url('chocolate-m.jpg');
   background-repeat: repeat;
   background-size: contain;
@@ -48,4 +49,44 @@ header {
 
 form .input-group {
 	margin-top: 20px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+	.page-header {
+		margin-top: 10px;
+	}
+	#header-image {
+		height: 80px;
+	}
+	.recipe-tile {
+		width: 125px;
+  	height: 125px;
+	}
+	.recipe-tile img{
+		width: 125px;
+  	height: 125px;
+	}
+}
+
+/* Extra Small devices (tablets, 768px and up) */
+@media (max-width: 767px) {
+	.page-header {
+		margin-top: 10px;
+	}
+	#header-image {
+		width: 90%;
+		height: 70px;
+	}
+	h1 {
+		font-size: 70px;
+	}
+	.recipe-tile {
+		width: 100px;
+  	height: 100px;
+	}
+	.recipe-tile img{
+		width: 100px;
+  	height: 100px;
+	}
 }
