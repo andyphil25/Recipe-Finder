@@ -48,6 +48,11 @@ class RecipesController < ApplicationController
 		def sample_recipes
 	  	#@samples = Recipe.take 5
 	  	recipes_count = Recipe.count
-			@samples = Recipe.limit(5).offset(rand(recipes_count))
+	  	@samples = []
+			@samples << Recipe.limit(1).offset(rand(recipes_count)).first
+			@samples << Recipe.limit(1).offset(rand(recipes_count)).first
+			@samples << Recipe.limit(1).offset(rand(recipes_count)).first
+			@samples << Recipe.limit(1).offset(rand(recipes_count)).first
+			@samples << Recipe.limit(1).offset(rand(recipes_count)).first
 	  end
 end
