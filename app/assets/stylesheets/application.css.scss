@@ -27,9 +27,14 @@
 h1 {
 	font-family: 'Qwigley', cursive;
 	font-size: 90px;
+	color: black;
+}
+.container a:hover, .container a:focus {
+	text-decoration: none;
 }
 h2 {
 	font-family: 'Qwigley', cursive;
+	font-size: 40px;
 }
 .page-header {
 	border-bottom: 0;
