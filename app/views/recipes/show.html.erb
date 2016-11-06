@@ -1,7 +1,20 @@
 
-<p>
-  <strong>Title:</strong>
-  <%= @recipe.title %>
-</p>
+<p><a href="<%=recipes_path(:search => params[:search])%>" >
+	<strong><span class="glyphicon glyphicon-menu-left"></span>Back</strong></a></p>
 
+<h3 class="text-center"><%= @recipe.title %></h3>	
+
+<div class = 'show-image'>
+	<%= image_tag @recipe.image_url %>
+</div>
+<div id="ingredients" >
+	<h4>Ingredients</h4>
+	<% ingredients = @recipe.ingredients.split(";") %>
+	<ul>
+		<% ingredients.each do |ingredient| %>
+			<li><%= ingredient %></li>
+		<% end %>
+	</ul>
+	
+</div>
 <%= link_to "Back", recipes_path(:search => params[:search]) %>

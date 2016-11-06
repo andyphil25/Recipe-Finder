@@ -23,11 +23,6 @@
 			<!-- Search result div -->
 			<div id="search-result" class="col-md-8 col-sm-12">
 
-				<!-- Flash Notification -->
-				<% flash.each do |key, value| %>
-				  <p id='<%= key %>'><%= value %></p>
-				<% end %>			
-				
 				<!-- Search Bar -->
 				<%= form_tag recipes_path, :method => 'get' do %>
 				  <div class="input-group">
@@ -42,6 +37,13 @@
 				  </div>
 				<% end %>
 				
+				<!-- Flash Notification -->
+				<% if flash[:error] %>
+					<div class="alert alert-danger" role="alert">
+						<%= flash[:error] %>
+					</div>	
+				<% end %>
+								
 				<%= yield %>	
 				
 
