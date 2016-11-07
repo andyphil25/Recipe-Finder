@@ -9,6 +9,7 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css?family=Qwigley" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -45,10 +46,11 @@
 				<% end %>
 								
 				<%= yield %>	
-				
-
+			
 			</div>
 			<!-- END OF Search result div -->
+
+			<hr class="visible-xs visible-sm">
 
 			<!-- Side Panel -->
 			<aside class="col-md-4 col-sm-12">
@@ -56,18 +58,10 @@
 			</aside>
 		</div>
 
-		<p>Powered	By	Food2Fork.com</p>
+		<p id="powered">Powered	By	Food2Fork.com</p>
 	</div>
-	
 
-	
-		
-	
 
-	
-
-	
-	
 	<%= javascript_include_tag 'jquery-2.1.4.min', 'bootstrap.min' %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>

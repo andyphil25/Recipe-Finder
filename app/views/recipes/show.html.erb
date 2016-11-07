@@ -1,5 +1,5 @@
 
-<p><a href="<%=recipes_path(:search => params[:search])%>" >
+<p id="back_link"><a href="<%= recipes_path(:search => params[:search])%>" >
 	<strong><span class="glyphicon glyphicon-menu-left"></span>Back</strong></a></p>
 
 <h3 class="text-center"><%= @recipe.title %></h3>	
@@ -8,7 +8,7 @@
 	<%= image_tag @recipe.image_url %>
 </div>
 <div id="ingredients" >
-	<h4>Ingredients</h4>
+	<h4><strong>Ingredients</strong></h4>
 	<% ingredients = @recipe.ingredients.split(";") %>
 	<ul>
 		<% ingredients.each do |ingredient| %>
@@ -17,4 +17,5 @@
 	</ul>
 	
 </div>
-<%= link_to "Back", recipes_path(:search => params[:search]) %>
+
+<a href="<%= @recipe.source_url %>" target='_blank'><strong>View recipe</strong></a>

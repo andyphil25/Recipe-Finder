@@ -23,6 +23,10 @@
   font-url('glyphicons-halflings-regular.ttf') format('truetype'), 
   font-url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+body{
+	font-family: 'Quicksand', sans-serif;
+	font-size: 17px;
+}
 
 h1 {
 	font-family: 'Qwigley', cursive;
@@ -61,6 +65,7 @@ header {
 
 form .input-group {
 	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .alert {
@@ -83,7 +88,17 @@ form .input-group {
 	margin: 20px auto 0;
 	display: block;
 }
+#back_link {
+	float: left;
+}
+#powered {
+	margin-top: 20px;
+}
+hr {
+	width: 50%;
+	color: black;
 
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
 	.page-header {
